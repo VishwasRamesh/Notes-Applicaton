@@ -4,6 +4,8 @@ const chalk = require('chalk');
 
 const yargs = require('yargs');
 
+const notes = require('./notes.js');
+
 // fs.writeFileSync('notes.txt', 'Aishwarya I will make it up to you');
 
 // fs.appendFileSync('notes.txt', ' Pakka I will');
@@ -32,8 +34,7 @@ yargs.command({
         }
     },
     handler: function(argv){
-        console.log("Title : ", argv.title);
-        console.log("Body : ", argv.body);
+        notes.addNotes(argv.title,argv.body);
     }    
 });
 
@@ -41,8 +42,15 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove a note',
-    handler: function(){
-        console.log("Removing a note");
+    builer: {
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function(argv){
+        notes.removeNote(argv.title);
     }
 });
 
@@ -60,7 +68,7 @@ yargs.command({
     command: 'read',
     describe: 'Read the notes',
     handler: function(){
-        console.log("Reading notes");
+       console.log("reading a note..");
     }
 });
 
