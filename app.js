@@ -6,11 +6,11 @@ const yargs = require('yargs');
 
 const notes = require('./notes.js');
 
-// fs.writeFileSync('notes.txt', 'Aishwarya I will make it up to you');
+// fs.writeFileSync('notes.txt', 'I am awesome');
 
-// fs.appendFileSync('notes.txt', ' Pakka I will');
+// fs.appendFileSync('notes.txt', 'Yes I am');
 
-// fs.appendFileSync('notes.txt', ' I promise');
+// fs.appendFileSync('notes.txt', 'Yes I'm absolutely sure');
 
 //customize yargs version
 yargs.version('1.1.0');
